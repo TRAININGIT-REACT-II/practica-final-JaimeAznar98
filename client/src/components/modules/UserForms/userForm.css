@@ -1,0 +1,39 @@
+.user{
+    padding: 5%;
+    margin: 10% 30%;
+    border-style: groove;
+    border-radius: 5%;
+    background-color: whitesmoke;
+}
+
+.formitem{
+    display: grid;
+    align-items: center;
+    padding: 2%;
+
+}
+
+.boton{
+    
+    padding: 4%;
+    cursor: pointer;
+    border-radius: 6%;
+    background-color: rgb(49, 49, 49);
+    color: whitesmoke;
+}
+
+.input{
+    padding: 2%;
+    border-radius: 2%;
+    font-size: large;
+}
+
+.titulo{
+    text-align: center;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    margin: 4% 10% 0% 10%;
+}

@@ -8,3 +8,10 @@
 .status-ok {
   color: green;
 }
+
+.general{
+  margin: 15% 30%;
+  background-color: whitesmoke;
+  border-style: groove;
+  border-radius: 5%;
+}

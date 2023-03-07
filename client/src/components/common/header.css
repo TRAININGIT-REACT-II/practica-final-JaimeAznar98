@@ -1,0 +1,17 @@
+.header{
+    background-color: rgba(255, 187, 0, 0.897);
+    padding: 2%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.link{
+    text-decoration: none;
+    color: black;
+}
+
+.nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}

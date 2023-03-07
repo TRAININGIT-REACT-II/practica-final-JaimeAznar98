@@ -1,28 +1,23 @@
-import { useEffect, useState } from "react";
-import Status from "./components/Status";
-
+import StatusHandler from "./components/modules/status/StatusHandler";
+import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import Login from "./components/modules/UserForms/Login";
+import Register from "./components/modules/UserForms/Register";
+import { PrivateRoute } from "./components/modules/Router/PrivateRoute";
 // Componente principal de la aplicación.
 const App = () => {
-  const [status, setStatus] = useState(false);
-  const [loading, setLoading] = useState(true);
-
-  // Cargamos el estado del servidor
-  useEffect(() => {
-    fetch("/api")
-      .then((res) => res.json())
-      .then((data) => setStatus(data.status === "ok"))
-      .finally(() => setLoading(false));
-  }, []);
-
   // Mostramos la aplicación
   return (
-    <main>
-      <h1>Curso de React de TrainingIT</h1>
-      <p>
-        Estado del servidor:
-        {loading ? " Cargando..." : <Status status={status} />}
-      </p>
-    </main>
+    <Router>
+      <Switch>
+        <PrivateRoute path="/" exact><StatusHandler /> </PrivateRoute>
+        <Route path="/login"> <Login /> </Route>
+        <Route path="/register"><Register/> </Route>
+        <PrivateRoute path="/create"></PrivateRoute>
+        <PrivateRoute path="/edit/:id" />
+        <PrivateRoute path="/view/:id" />
+        <PrivateRoute path="/list" />
+      </Switch>
+    </Router>
   );
 };
 
